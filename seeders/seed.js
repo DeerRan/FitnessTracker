@@ -11,8 +11,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 9)),
     exercises: [
-      {
-        type: 'resistance',
+      {      
         name: 'Bicep Curl',
         duration: 20,
         weight: 100,
@@ -24,8 +23,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 8)),
     exercises: [
-      {
-        type: 'resistance',
+      {      
         name: 'Lateral Pull',
         duration: 20,
         weight: 300,
@@ -37,8 +35,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 7)),
     exercises: [
-      {
-        type: 'resistance',
+      {        
         name: 'Push Press',
         duration: 25,
         weight: 185,
@@ -50,8 +47,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 6)),
     exercises: [
-      {
-        type: 'cardio',
+      {      
         name: 'Running',
         duration: 25,
         distance: 4,
@@ -61,8 +57,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 5)),
     exercises: [
-      {
-        type: 'resistance',
+      {     
         name: 'Bench Press',
         duration: 20,
         weight: 285,
@@ -74,8 +69,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 4)),
     exercises: [
-      {
-        type: 'resistance',
+      {       
         name: 'Bench Press',
         duration: 20,
         weight: 300,
@@ -87,8 +81,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 3)),
     exercises: [
-      {
-        type: 'resistance',
+      {       
         name: 'Quad Press',
         duration: 30,
         weight: 300,
@@ -100,8 +93,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 2)),
     exercises: [
-      {
-        type: 'resistance',
+      {        
         name: 'Bench Press',
         duration: 20,
         weight: 300,
@@ -113,8 +105,7 @@ const workoutSeed = [
   {
     day: new Date(new Date().setDate(new Date().getDate() - 1)),
     exercises: [
-      {
-        type: 'resistance',
+      {       
         name: 'Military Press',
         duration: 20,
         weight: 300,

@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const fitnessSchema = new Schema ({
-    workout: [{
-        exercise: {
+    exercises: [{
+        name: {
             type: String,
             trim: true,
             required: true
@@ -25,31 +25,31 @@ const fitnessSchema = new Schema ({
             required: true
         },
 
-        exerciseduration: {
+        duration: {
             type: Number,
             required: true
         }
     }],
     
-    workoutduration: {
+    durationsum: {
         type: Number,
         default: 0,
     },
 
-    date: {
+    day: {
         type: Date,
         default: Date.now
     }
 })
 
 fitnessSchema.methods.durationadd = function () {
-    for (let i = 0; i < this.workout.length; i++)
+    for (let i = 0; i < this.exercises.length; i++)
     {
-        this.workoutduration += this.workout[i].exerciseduration;
+        this.durationsum += this.exercises[i].duration;
     }
-    return this.workoutduration;
+    return this.durationsum;
 }
 
-const fitnessModel = mongoose.model("fitnessModel", fitnessSchema);
+const workoutmodel = mongoose.model("workoutmodel", fitnessSchema);
 
-module.exports = fitnessModel;
+module.exports = workoutmodel;

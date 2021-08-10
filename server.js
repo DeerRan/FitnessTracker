@@ -1,39 +1,20 @@
 const express = require ('express');
 const mongoose = require('mongoose');
+const app = express();
 
-const fitnessModel = require("./models/fitnessModel");
+const PORT = process.env.PORT || 3001;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness_db", { useNewUrlParser: true });
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-const testData = [{
-  workout: [{
-    exercise: "Curl",
-    weight: 25,
-    sets: 6,
-    reps: 10,
-    exerciseduration: 15
-  }],
-  workoutduration: 0
+app.use(express.static('public'));
 
-  },
+app.use(require("./controllers/index"));
 
-  {workout: [{
-    exercise: "Preacher Curl",
-    weight: 55,
-    sets: 3,
-    reps: 10,
-    exerciseduration: 30
-  }],
-  workoutduration: 0
-  },
-];
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dbWorkout", {
+  useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
+});
 
-fitnessModel
-  .create(testData)
-  .then(fitness_db => {
-    console.log(fitness_db);
-  })
-  .catch(({ message }) => {
-    console.log(message);
-  });
-
+app.listen(PORT, () => {
+    console.log(`App started on ${PORT}`)
+})
