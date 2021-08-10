@@ -11,18 +11,15 @@ const fitnessSchema = new Schema ({
 
         weight: {
             type: Number,
-            required: true,
             match: [/[0-9]{1,3}/, "Please enter in a whole number in without lbs"]
         },
 
         sets: {
             type: Number,
-            required: true
         },
 
         reps: {
             type: Number,
-            required: true
         },
 
         duration: {
@@ -42,13 +39,13 @@ const fitnessSchema = new Schema ({
     }
 })
 
-fitnessSchema.methods.durationadd = function () {
-    for (let i = 0; i < this.exercises.length; i++)
-    {
-        this.durationsum += this.exercises[i].duration;
-    }
-    return this.durationsum;
-}
+// fitnessSchema.methods.durationadd = function () {
+//     for (let i = 0; i < this.exercises.length; i++)
+//     {
+//         this.durationsum += this.exercises[i].duration;
+//     }
+//     return this.durationsum;
+// }
 
 const workoutmodel = mongoose.model("workoutmodel", fitnessSchema);
 
